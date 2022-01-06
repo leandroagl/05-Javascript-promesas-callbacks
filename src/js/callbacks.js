@@ -7,7 +7,7 @@ const heroes = {
         nombre: 'Ironman',
         poder: 'Absurda cantidad de dinero'
     },
-    sipder: {
+    spider: {
         nombre: 'Spiderman',
         poder: 'La mejor reaccion alergica a las arañas'
     }
@@ -17,6 +17,11 @@ export const buscarHeroe = ( id, callback ) => {
 
     const heroe = heroes[id];
 
-    callback( heroe )
+    if ( heroe ) {
+        callback( null, heroe );      
+    } else {
+        callback(`No existe un heroe con ese ID ${ id }`)
+
+    }
 
 }
