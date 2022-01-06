@@ -24,7 +24,7 @@ export const buscarHeroe = ( id ) => {
             setTimeout( ()=> resolve(heroe), 1000 );
 
         } else {
-            reject(`No existe un heroe con el ud ${id}`)
+            reject(`No existe un heroe con el id ${id}`)
         }
     });
 };
@@ -36,7 +36,7 @@ export const buscarHeroeAsync = async( id ) => {
         if ( heroe ) {
             return heroe;
         } else {
-            throw `No existe un heroe con el ud ${id}`
+            throw `No existe un heroe con el id ${id}`
         }
 };
 
