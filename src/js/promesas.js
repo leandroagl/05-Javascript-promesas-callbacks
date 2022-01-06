@@ -11,18 +11,20 @@ const heroes = {
         nombre: 'Spiderman',
         poder: 'La mejor reaccion alergica a las arañas'
     }
-}
+};
 
-export const buscarHeroe = ( id, callback ) => {
+export const buscarHeroe = ( id ) => {
 
     const heroe = heroes[id];
 
-    if ( heroe ) {
-        callback( null, heroe );      
-    } else {
-        // Un error
-        callback(`No existe un heroe con ese ID ${ id }`)
+    return new Promise( ( resolve, reject ) => {
 
-    }
+        if ( heroe ) {
+            resolve( heroe )
+        } else {
+            reject(`No existe un heroe con el ud ${id}`)
+        }
 
+    });
+     
 }
